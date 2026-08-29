@@ -1,0 +1,27 @@
+# MPLAB X build artifacts
+ak-gesture.X/build/
+ak-gesture.X/dist/
+ak-gesture.X/debug/
+ak-gesture.X/.generated_files/
+ak-gesture.X/private/
+ak-gesture.X/nbproject/private/
+ak-gesture.X/nbproject/Package-*.bash
+
+# MPLAB X user config
+*.mk~
+*.bak
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# OS / editor
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*~

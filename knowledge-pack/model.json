@@ -1,0 +1,38 @@
+{
+  "NumModels": 1,
+  "ModelIndexes": {"0": "AK_GESTURE_NEAREST_CENTROID_V1"},
+  "ModelDescriptions": [
+    {
+      "Name": "AK_GESTURE_NEAREST_CENTROID_V1",
+      "Notes": "Hand-crafted knowledge pack for dsPIC33AK1024MPS614 (Model Builder does not yet support this target). Trained by tools/train_kp.py from the CSVs in dataset/. Nearest-centroid classifier with MAD-normalised L1 distance and per-class rejection threshold. See mplabml/inc/kp_model_data.h for the baked-in constants.",
+      "ClassMaps": {"0": "Unknown", "2": "IDLE", "3": "UP-DOWN", "4": "WAVE", "5": "WHEEL"},
+      "ModelType": "NearestCentroid",
+      "WindowSize": 100,
+      "Delta": 100,
+      "SampleRate": 100,
+      "InputColumns": ["x", "y", "z"],
+      "FeatureNames": [
+        "x75Percentile",
+        "y75Percentile",
+        "yVariance",
+        "xxyy_cross_p2p_diff",
+        "xxzz_cross_p2p_diff",
+        "yyzz_cross_p2p_diff",
+        "xxyyzz_cross_max_col",
+        "yMaxP2PGlobalDC"
+      ],
+      "FeatureFunctions": [
+        "75th Percentile",
+        "75th Percentile",
+        "Variance",
+        "Two Column Peak To Peak Difference",
+        "Two Column Peak To Peak Difference",
+        "Two Column Peak To Peak Difference",
+        "Max Column",
+        "Global Peak to Peak of Low Frequency"
+      ],
+      "TrainingAccuracy": 0.987,
+      "TrainingWindowsPerClass": {"IDLE": 180, "UP-DOWN": 169, "WAVE": 179, "WHEEL": 177}
+    }
+  ]
+}
